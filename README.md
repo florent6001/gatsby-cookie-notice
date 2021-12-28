@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Gatsby Cookie Notice
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A customizable React component that display a cookie banner on your website, Gatsby Cookie Notice can be customized very esily.
 
-## Available Scripts
+## Screenshots
 
-In the project directory, you can run:
+![gatsby-cookie-consent](https://i.imgur.com/3PdZAff.png)
+![gatsby-cookie-consent](https://i.imgur.com/IJ29PBF.png)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```shell
+npm install @mirzalikic/react-cookie-notice --save
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage 
 
-### `npm test`
+First, you have to import the component to your file.
+```js
+import {CookieNotice} from "gatsby-cookie-notice";
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then, you call the component in your view, passing your text :
+```js
+<CookieNotice>
+    <h4>This websites uses cookies.</h4>
+    <p>We use cookies to make the site work better, but also to see how you interact with it. how you interact with it. We will only use cookies if you allow us to do so by clicking by clicking on "Accept Cookies". You can also choose which cookie you want to allow.</p>
+</CookieNotice>
+```
 
-### `npm run build`
+You can also pass somes props (list below)
+```js
+<CookieNotice
+  personalizeButtonClasses={"my-btn-classes"}
+  personalizeButtonText={"I want to choose my cookies !"}
+  cookies={[
+          {name: 'necessary', checked: true, editable: false, default: true, title: 'Essentiel', text: 'Essential cookies are necessary for the proper functioning of the site. The site cannot function properly without them.' },
+          {name: 'gatsby-gdpr-google-analytics', checked: true, editable: true, default: true, title: 'Google Analytics', text: 'Google Analytics is a statistical tool of Google allowing to measure the audience of the website.' }
+    ]}>
+    <h4>This websites uses cookies.</h4>
+    <p>We use cookies to make the site work better, but also to see how you interact with it. how you interact with it. We will only use cookies if you allow us to do so by clicking by clicking on "Accept Cookies". You can also choose which cookie you want to allow.</p>
+</CookieNotice>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+By default gatsby-cookie-notice work with Bootstrap 5, but you can change classes by passing props.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Props
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Name                                | Default                                                                                                                                                            | Description                                                                                                      |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| backgroundClasses                   | "container"                                                                                                                                                        | Div inside the BackgroundWrapper, create to make the backgronud color by default.                                |
+| backgroundWrapperClasses            | "bg-cookie fixed-bottom py-5"                                                                                                                                      | Div that wrap all the others.                                                                                    |
+| acceptButtonText                    | "Accept"                                                                                                                                                           | Accept button text                                                                                               |
+| acceptButtonClasses                 | "float-end"                                                                                                                                                        | Accept button classes                                                                                            |
+| buttonWrapperClasses                | "btn btn-primary btn-lg mx-2"                                                                                                                                      | Accept and decline button are wrapped inside the same div, here you can change the class of this div.            |
+| declineButton                       | true                                                                                                                                                               | Do you want a decline button ? True or false.                                                                    |
+| declineButtonText                   | "Decline"                                                                                                                                                          | Decline button classes                                                                                           |
+| declineButtonClass                  | "btn btn-secondary btn-lg mx-2"                                                                                                                                    | Decline button text                                                                                              |
+| wrapperClasses                      | "d-flex justify-content-between cookie-notice"                                                                                                                     | Classes of the div that wrap accept/decline button (which are in the same div), and also the personalize button. |
+| personalizeButtonClasses            | "btn btn-secondary"                                                                                                                                                | Personalize button classes                                                                                       |
+| personalizeButtonText               | "Personalize"                                                                                                                                                      | Personalize button text                                                                                          |
+| cookies                             | [{name: 'necessary',checked: true,editable: false,default: true,title: 'Essentiel',text: 'Essential cookie are necessary for the proper function of the website'}] | Cookie that you want to implement.                                                                               |
+| cookieDays                          | 365                                                                                                                                                                | How much times do you want to keep the cookies ?                                                                 |
+| personalizeButtonEnable             | true                                                                                                                                                               | Activate / Desactivate the personalize button                                                                    |
+| cookieListClasses                   | "row cookie-list"                                                                                                                                                  | Styles of a div that wrap every every cookie on the customize section.                                           |
+| cookieMapClasses                    | "col-12 col-md-6"                                                                                                                                                  | Styles of a Class that wrap checkbox + label (cookie title) + p(description of the cookie)                       |
+| cookieTitleClasses                  | ""                                                                                                                                                                 | Styles of the label of the cookie (personalize cookies)                                                          |
+| personalizeValidationClasses        | "btn btn-primary btn-lg float-end"                                                                                                                                 | Classes for the button that save the preferences (personalize cookies)                                           |
+| personalizeValidationWrapperClasses | "col-12"                                                                                                                                                           | Classes for the button wrapper that save the preferences (personalize cookies)                                   |
+| personalizeValidationText           | "Save"                                                                                                                                                             | Validation button text                                                                                           |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Cookies property
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`name` Name of the cookie, should be the same as gatsby-plugin-gdpr-cookies cookie name.
+`editable` If the cookie isn't editable, the checkbox cannot be checked / unchecked, used for necessary cookies.
+`default` Cookie default value, if the cookie isn't editable, the default value is stored while decline the cookie.
+`title` Title of the cookie, displayed on the customize section.
+`text` Description of the cookie, displayed with the title on the customize section.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License 
 
-## Learn More
+MIT
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgement
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank's to mirzalikic. He have a repository called "react-cookie-notice" that inspired me to create this repository for gatsby. The design and a bit of code are inspired by him. Also, thank's to all the peoples that will help the repository (add features, fix bugs, ..)
