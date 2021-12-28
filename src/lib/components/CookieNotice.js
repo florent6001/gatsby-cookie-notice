@@ -28,7 +28,6 @@ const CookieNotice = ({
 
     const [displayCookieList, setDisplayCookieList] = useState();
     const [displayCookieNotice, setDisplayCookieNotice] = useState();
-    const [acceptedCookie, setAcceptedCookie] = useState();
 
     const styles = {
         background: backgroundClasses,
@@ -174,7 +173,7 @@ const CookieNotice = ({
     )
 }
 
-Cookie.defaultProps = {
+CookieNotice.defaultProps = {
     backgroundClasses: "container",
     backgroundWrapperClasses: "bg-cookie fixed-bottom py-5",
     acceptButtonText: "Accept",

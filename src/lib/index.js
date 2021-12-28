@@ -1,3 +1,3 @@
-import CookieConsent from './components/CookieConsent';
+import CookieNotice from './components/CookieConsent';
 
-export { CookieConsent };
+export { CookieNotice };
