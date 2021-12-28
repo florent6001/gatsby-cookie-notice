@@ -85,4 +85,4 @@ MIT
 
 ## Acknowledgement
 
-Thank's to mirzalikic. He have a repository called "react-cookie-notice" that inspired me to create this repository for gatsby. The design and a bit of code are inspired by him
+Thank's to mirzalikic. He have a repository called "react-cookie-notice" that inspired me to create this repository for gatsby. The design and a bit of code are inspired by him. Also, thank's to all the peoples that will help the repository (add features, fix bugs, ..)
