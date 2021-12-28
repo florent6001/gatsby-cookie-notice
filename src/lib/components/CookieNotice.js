@@ -20,7 +20,6 @@ const CookieNotice = ({
                     cookieListClasses,
                     cookieMapClasses,
                     cookieTitleClasses,
-                    wrapCheckboxClasses,
                     personalizeValidationClasses,
                     personalizeValidationWrapperClasses,
                     personalizeValidationText
@@ -40,7 +39,6 @@ const CookieNotice = ({
         cookiesList: cookieListClasses,
         cookieMap: cookieMapClasses,
         cookieTitle: cookieTitleClasses,
-        wrapCheckbox: wrapCheckboxClasses,
         personalizeValidation: personalizeValidationClasses,
         personalizeValidationWrapper: personalizeValidationWrapperClasses
     }
@@ -201,7 +199,6 @@ CookieNotice.defaultProps = {
     cookieListClasses: "row cookie-list",
     cookieMapClasses: "col-12 col-md-6",
     cookieTitleClasses: "",
-    wrapCheckboxClasses: "",
     personalizeValidationClasses: "btn btn-primary btn-lg float-end",
     personalizeValidationWrapperClasses: "col-12",
     personalizeValidationText: "Save"
