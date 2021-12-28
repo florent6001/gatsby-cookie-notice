@@ -1,6 +1,6 @@
 # Gatsby Cookie Notice
 
-A customizable React component that display a cookie banner on your website, Gatsby Cookie Notice can be customized very esily.
+A customizable React component that display a cookie banner on your website, Gatsby Cookie Notice can be customized very easily.
 
 ## Screenshots
 
