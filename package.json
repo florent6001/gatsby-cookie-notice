@@ -1,8 +1,15 @@
 {
   "name": "gatsby-cookie-notice",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Gatsby Plugin that add a Cookie Component fully customizable working with gatsby-plugin-gdpr-cookies.",
+  "author": "Florent Vandroy",
+  "keywords": ["gatsby", "cookie", "GDPR", "notice", "customizable"],
+  "version": "1.0.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -13,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +41,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florent6001/gatsby-cookie-notice.git"
+}
 }
