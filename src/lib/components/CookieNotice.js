@@ -187,7 +187,6 @@ CookieNotice.defaultProps = {
         [
             {
                 name: 'necessary',
-                checked: true,
                 editable: false,
                 default: true,
                 title: 'Essentiel',
