@@ -42,7 +42,6 @@ const CookieNotice = _ref => {
   } = _ref;
   const [displayCookieList, setDisplayCookieList] = (0, _react.useState)();
   const [displayCookieNotice, setDisplayCookieNotice] = (0, _react.useState)();
-  const [acceptedCookie, setAcceptedCookie] = (0, _react.useState)();
   const styles = {
     background: backgroundClasses,
     backgroundWrapper: backgroundWrapperClasses,
@@ -169,7 +168,7 @@ const CookieNotice = _ref => {
   }, text.acceptButton))))));
 };
 
-Cookie.defaultProps = {
+CookieNotice.defaultProps = {
   backgroundClasses: "container",
   backgroundWrapperClasses: "bg-cookie fixed-bottom py-5",
   acceptButtonText: "Accept",

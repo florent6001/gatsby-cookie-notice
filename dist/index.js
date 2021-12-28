@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "CookieConsent", {
+Object.defineProperty(exports, "CookieNotice", {
   enumerable: true,
   get: function get() {
-    return _CookieConsent.default;
+    return _CookieNotice.default;
   }
 });
 
-var _CookieConsent = _interopRequireDefault(require("./components/CookieConsent"));
+var _CookieNotice = _interopRequireDefault(require("./components/CookieNotice"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
