@@ -3,7 +3,7 @@
   "description": "Gatsby Plugin that add a Cookie Component fully customizable working with gatsby-plugin-gdpr-cookies.",
   "author": "Florent Vandroy",
   "keywords": ["gatsby", "gatsby-plugin", "cookie", "GDPR", "notice", "customizable"],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
