@@ -10,7 +10,7 @@ A customizable React component that display a cookie banner on your website, Gat
 ## Installation
 
 ```shell
-npm install @mirzalikic/react-cookie-notice --save
+npm i gatsby-cookie-notice
 ```
 
 ## Usage 
